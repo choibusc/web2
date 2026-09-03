@@ -1,0 +1,85 @@
+/* 부드럽고 친근한 영문 폰트(Quicksand)와 깔끔한 한글 폰트 불러오기 */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Noto+Sans+KR:wght@500;700&display=swap');
+
+/* 화면 전체 배경 (화사한 파스텔 그라데이션) */
+body {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 시계 컨테이너 (밝은 화이트 톤과 부드러운 그림자) */
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 80px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    /* 부드럽고 입체적인 그림자 효과 */
+    box-shadow:
+            20px 20px 60px #d9d9d9,
+            -20px -20px 60px #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 빛이 반짝하고 지나가는 효과 (밝은 테마에 맞춤) */
+.clock-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transform: skewX(-25deg);
+    animation: shine 5s infinite;
+}
+
+/* 인공지능소프트웨어과 텍스트 스타일 */
+.clock-container h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.6rem;
+    color: #7f8fa6; /* 차분하고 부드러운 회색조 */
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+/* 현재 시각 텍스트 스타일 (청량한 그라데이션 색상) */
+.clock-container h2 {
+    font-family: 'Quicksand', 'Noto Sans KR', sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    /* 텍스트에만 그라데이션 색상 입히기 */
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* 시계가 가볍게 둥둥 떠다니는 애니메이션 */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* --- 애니메이션 정의 --- */
+
+/* 빛 반사 애니메이션 */
+@keyframes shine {
+    0% { left: -100%; }
+    15% { left: 200%; }
+    100% { left: 200%; }
+}
+
+/* 가볍게 떠오르는(둥둥 뜨는) 애니메이션 */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
