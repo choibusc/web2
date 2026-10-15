@@ -18,14 +18,15 @@ import reportWebVitals from './reportWebVitals';
 //import UserinfoList from "./05/exam03/UserinfoList";
 //import NOtificationList from "./06/NotificationList";
 //import TextinputWithFocusButton from "./07/02/TextinputWithFocusButton";
-import Accommodate from "./07/Accommodate";
+//import Accommodate from "./07/Accommodate";
+import Toggle from "./08/Toggle"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 setInterval(() => {
     root.render(
         <React.StrictMode>
-            <Accommodate/>
+            <Toggle/>
         </React.StrictMode>
     );
 }, 1000)
