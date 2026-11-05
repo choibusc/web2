@@ -26,14 +26,19 @@ import reportWebVitals from './reportWebVitals';
 //import LogInControl from "./09/ex2/LogInControl";
 //import Mailbox from "./09/ex3/Mailbox";
 //import LogInControl2 from "./09/ex3/LogInControl2";
-import MainPage from "./09/ex4/MainPage";
+//import MainPage from "./09/ex4/MainPage";
+//import MapTest from "./10/MapTest";
+//import AttendanceCardBook from "./10/AttendanceCardBook";
+//import NewForm from "./11/NewForm";
+//import FruitSelect from "./11/FruitSelect";
+import Reservation from "./11/Reservation";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 setInterval(() => {
     root.render(
         <React.StrictMode>
-            <MainPage/>
+            <Reservation/>
         </React.StrictMode>
     );
 }, 1000)
