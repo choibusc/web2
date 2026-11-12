@@ -24,36 +24,52 @@ function DistanceVerdict({ kilometers }) {
     if (Number.isNaN(kilometers) || kilometers <= 0) {
         return (
             <div className="verdict-box neutral">
-                <span className="verdict-icon">📍</span>
-                <span>거리를 입력하면 코스를 안내해 드립니다</span>
+                <span className="verdict-icon">🗺️</span>
+                <span>거리를 입력하면 실제 장소로 비유해 드립니다</span>
             </div>
         );
     }
 
-    let statusClass = "walk";
-    let icon = "🚶";
-    let message = "가볍게 산책하기 좋은 거리입니다.";
+    let statusClass = "step-1";
+    let icon = "🏫";
+    let message = "학교 운동장 트랙(400m)을 한두 바퀴 도는 거리입니다.";
 
-    if (kilometers >= 42.195) {
-        statusClass = "marathon";
-        icon = "🏆";
-        message = "마라톤 풀코스(42.195km) 이상! 대단한 도전입니다!";
-    } else if (kilometers >= 21.0975) {
-        statusClass = "half";
-        icon = "🔥";
-        message = "하프 마라톤(21.1km) 완주 수준의 장거리 코스입니다!";
+    if (kilometers >= 40000) {
+        statusClass = "step-10";
+        icon = "🌍";
+        message = "지구 둘레(약 40,075km)를 한 바퀴 도는 어마어마한 거리입니다!";
+    } else if (kilometers >= 1000) {
+        statusClass = "step-9";
+        icon = "✈️";
+        message = "서울에서 도쿄(약 1,150km)까지 비행기로 가는 거리입니다.";
+    } else if (kilometers >= 450) {
+        statusClass = "step-8";
+        icon = "🏝️";
+        message = "서울에서 제주도(약 450km)까지 직선으로 이동하는 거리입니다.";
+    } else if (kilometers >= 325) {
+        statusClass = "step-7";
+        icon = "🚄";
+        message = "서울에서 부산(약 325km)까지 KTX로 달리는 거리입니다.";
+    } else if (kilometers >= 140) {
+        statusClass = "step-6";
+        icon = "🚗";
+        message = "서울에서 대전(약 140km)까지 고속도로를 달리는 거리입니다.";
+    } else if (kilometers >= 60) {
+        statusClass = "step-5";
+        icon = "🏔️";
+        message = "서울에서 춘천(약 75km)까지 당일치기 드라이브 거리입니다.";
+    } else if (kilometers >= 30) {
+        statusClass = "step-4";
+        icon = "🚇";
+        message = "서울에서 인천(약 30km)까지 지하철로 이동하는 거리입니다.";
     } else if (kilometers >= 10) {
-        statusClass = "ten-k";
-        icon = "🏅";
-        message = "본격적인 10km 러닝 대회 도전 거리입니다!";
-    } else if (kilometers >= 5) {
-        statusClass = "jogging";
-        icon = "🏃";
-        message = "유산소 운동에 딱 좋은 5km 이상 조깅 코스입니다.";
-    } else if (kilometers >= 2) {
-        statusClass = "light-run";
-        icon = "👟";
-        message = "몸풀기 러닝이나 빠른 걸음으로 적당한 거리입니다.";
+        statusClass = "step-3";
+        icon = "🌉";
+        message = "여의도에서 잠실(약 15km)까지 한강변을 따라가는 거리입니다.";
+    } else if (kilometers >= 1) {
+        statusClass = "step-2";
+        icon = "🚶";
+        message = "지하철 1~2정거장(약 1~3km)을 가볍게 걷는 거리입니다.";
     }
 
     return (
@@ -86,10 +102,11 @@ function DistanceConverter() {
     const kilometers = scale === "mi" ? tryConvert(distance, toKilometers) : distance;
     const miles = scale === "km" ? tryConvert(distance, toMiles) : distance;
 
+    // 게이지 바 계산 (서울 0km ~ 부산 325km 기준)
     const parsedKm = parseFloat(kilometers);
     const progress = Number.isNaN(parsedKm)
         ? 0
-        : Math.min(Math.max((parsedKm / 42.195) * 100, 0), 100);
+        : Math.min(Math.max((parsedKm / 325) * 100, 0), 100);
 
     return (
         <div className="app-wrapper">
@@ -122,15 +139,16 @@ function DistanceConverter() {
                     />
                 </div>
 
+                {/* 서울 ~ 부산 게이지 바 */}
                 <div className="gauge-section">
                     <div className="gauge-labels">
-                        <span>출발 (0km)</span>
-                        <span>하프 (21.1km)</span>
-                        <span>풀코스 (42.2km)</span>
+                        <span>서울 (0km)</span>
+                        <span>대전 (140km)</span>
+                        <span>부산 (325km)</span>
                     </div>
                     <div className="gauge-track">
                         <div
-                            className={`gauge-fill ${parsedKm >= 42.195 ? "completed" : ""}`}
+                            className={`gauge-fill ${parsedKm >= 325 ? "completed" : ""}`}
                             style={{ width: `${progress}%` }}
                         />
                     </div>
