@@ -4,6 +4,7 @@ import './index.css'
 // import App from './App';
 // import TodoListApp from "./01/TodoListApp";
 import reportWebVitals from './reportWebVitals';
+import WelcomeDialog from "./13/ex2/WelcomeDialog";
 // import Library from "./03/Library";
 // import Library from "./03/enhanced_css/Library";
 // import "./03/enhanced_css/Book.css"
@@ -33,14 +34,18 @@ import reportWebVitals from './reportWebVitals';
 //import FruitSelect from "./11/FruitSelect";
 //import Reservation from "./11/Reservation";
 //import Calculator from "./12/ex4/Calculator";
-import DistanceConverter from "./12/ex05/DistanceConverter";
+//import DistanceConverter from "./12/ex05/DistanceConverter";
+//import WelcomeDialog from "./13/ex1/WelcomeDialog";
+//import SignUpDialog from "./13/ex3/SignUpDialog";
+//import ProfileCard from "./13/ex4/ProfileCard";
+import AirbnbCard from "./13/ex5/AirbnbCard";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 setInterval(() => {
     root.render(
         <React.StrictMode>
-            <DistanceConverter/>
+            <AirbnbCard/>
         </React.StrictMode>
     );
 }, 1000)

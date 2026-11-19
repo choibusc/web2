@@ -1,0 +1,162 @@
+/* 전체 섹션 컨테이너 */
+.Airbnb-section {
+    max-width: 1440px;
+    margin: 40px auto;
+    padding: 0 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    color: #222222;
+}
+
+/* 상단 헤더 ("부산의 인기 숙소 →" 및 좌우 버튼) */
+.Airbnb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.Airbnb-heading {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.Airbnb-arrow-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    font-size: 0.9rem;
+}
+
+.Airbnb-nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.Airbnb-nav-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    color: #222222;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Airbnb-nav-btn.disabled {
+    color: #cccccc;
+    border-color: #eeeeee;
+    cursor: default;
+}
+
+/* 6개 숙소 카드 가로 그리드 */
+.Airbnb-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+}
+
+/* 개별 Card 컴포넌트 */
+.Card {
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* 썸네일 이미지 래퍼 */
+.Card-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 0.96;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+}
+
+.Card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.Card:hover .Card-image {
+    transform: scale(1.03);
+}
+
+/* 좌측 상단 "게스트 선호" 뱃지 */
+.Card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #222222;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* 우측 상단 하트 버튼 */
+.Card-heart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.Card-heart-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 카드 하단 텍스트 영역 */
+.Card-title {
+    margin: 0 0 3px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222222;
+}
+
+.Card-date {
+    margin: 0 0 3px 0;
+    font-size: 0.85rem;
+    color: #717171;
+}
+
+.Card-price-rating {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #717171;
+}
+
+/* 반응형 (화면이 좁아질 때) */
+@media (max-width: 1100px) {
+    .Airbnb-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .Airbnb-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
