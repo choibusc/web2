@@ -1,0 +1,165 @@
+.event-detail-wrap {
+    width: 100%;
+    animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-top-bar {
+    margin-bottom: 24px;
+}
+
+.btn-back {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-back:hover {
+    border-color: #111;
+    background-color: #111;
+    color: #fff;
+}
+
+.detail-header {
+    border-top: 2px solid #111;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 36px 20px;
+    text-align: center;
+    background-color: #fafafa;
+    margin-bottom: 40px;
+}
+
+.detail-meta {
+    font-size: 13px;
+    color: #d91e2a;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.detail-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #111;
+    margin: 0 0 12px 0;
+}
+
+.detail-info {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.product-list-header {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-list-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* 상품 그리드 (4열 배치) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 20px;
+}
+
+.product-card {
+    cursor: pointer;
+}
+
+.product-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* 의류/패션 상품에 어울리는 세로 비율 */
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-bottom: 12px;
+}
+
+.product-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-thumb img {
+    transform: scale(1.05);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #d91e2a;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+}
+
+.product-brand {
+    font-size: 12px;
+    font-weight: 600;
+    color: #111;
+    margin: 0 0 4px 0;
+}
+
+.product-name {
+    font-size: 13px;
+    font-weight: 400;
+    color: #444;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.product-price-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.original-price {
+    font-size: 12px;
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.sale-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+}
+
+.product-floor {
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+}
+
+.empty-products {
+    padding: 80px 0;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+@media (max-width: 960px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

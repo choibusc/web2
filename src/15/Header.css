@@ -1,0 +1,121 @@
+.shinsegae-header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.top-util-bar {
+    border-bottom: 1px solid #f4f4f4;
+    font-size: 11px;
+    color: #888;
+}
+
+.util-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.lang-select {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.lang-select span.active {
+    color: #111;
+    font-weight: 600;
+}
+
+.divider {
+    color: #ddd;
+}
+
+.ssg-link {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+}
+
+.main-nav-wrap {
+    padding: 22px 0;
+}
+
+.main-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #111;
+    text-decoration: none;
+}
+
+.gnb ul {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin: 0;
+    padding: 0;
+}
+
+.gnb li a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #222;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.gnb li.active a,
+.gnb li a:hover {
+    color: #d91e2a; /* 신세계 포인트 레드 컬러 */
+    font-weight: 500;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.breadcrumb-wrap {
+    background-color: #fff;
+}
+
+.breadcrumb-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 11px;
+    color: #888;
+    gap: 6px;
+}
+
+.breadcrumb-inner .current {
+    color: #333;
+}

@@ -38,14 +38,16 @@ import WelcomeDialog from "./13/ex2/WelcomeDialog";
 //import WelcomeDialog from "./13/ex1/WelcomeDialog";
 //import SignUpDialog from "./13/ex3/SignUpDialog";
 //import ProfileCard from "./13/ex4/ProfileCard";
-import AirbnbCard from "./13/ex5/AirbnbCard";
+//import AirbnbCard from "./13/ex5/AirbnbCard";
+//import DarkOrLight from "./14/DarkOrLight";
+import App from "./15/App";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 setInterval(() => {
     root.render(
         <React.StrictMode>
-            <AirbnbCard/>
+            <App/>
         </React.StrictMode>
     );
 }, 1000)
